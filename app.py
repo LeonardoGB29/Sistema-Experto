@@ -16,6 +16,7 @@ def resultado():
     epoca = request.form.get('epoca')
 
     recomendaciones = obtener_recomendaciones(clima, actividades, presupuesto, tipo_turista, epoca)
+    
     info = [obtener_info_destinos(destino) for destino in recomendaciones]
 
     return render_template('resultados.html', resultados=info)

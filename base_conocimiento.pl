@@ -115,7 +115,7 @@ tipo_de_destino(tarapoto, selva).
 tipo_de_destino(iquitos, ciudad).
 tipo_de_destino(pacaya_samiria, reserva).
 tipo_de_destino(punta_sal, playa).
-tipo_de_destino(mancora, playa).
+tipo_de_destino(mancora, playa).e
 tipo_de_destino(huaraz, montaña).
 tipo_de_destino(pastoruri, glaciar).
 tipo_de_destino(chavin, arqueologico).
