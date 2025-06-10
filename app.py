@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/resultado', methods=['POST'])
+@app.route('/resultados', methods=['POST'])
 def resultado():
     clima = request.form.get('clima')
     actividades = request.form.getlist('actividades')
@@ -18,7 +18,7 @@ def resultado():
     recomendaciones = obtener_recomendaciones(clima, actividades, presupuesto, tipo_turista, epoca)
     info = [obtener_info_destinos(destino) for destino in recomendaciones]
 
-    return render_template('resultado.html', resultados=info)
+    return render_template('resultados.html', resultados=info)
 
 if __name__ == '__main__':
     app.run(debug=True)

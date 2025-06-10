@@ -5,17 +5,32 @@ prolog.consult("base_conocimiento.pl")
 
 def obtener_recomendaciones(clima, actividades, presupuesto, tipo_turista, epoca):
     resultados = []
-    for r in prolog.query(f"destino(X), clima(X, {clima}), presupuesto(X, {presupuesto}), época_recomendada(X, {epoca})."):
-        nombre = r['X']
-        # puedes agregar más filtros luego
-        resultados.append(nombre)
+
+    condiciones = ["destino(X)"]
+
+    if clima is not None:
+        condiciones.append(f"clima(X, '{clima}')")
+    if presupuesto is not None:
+        condiciones.append(f"presupuesto(X, '{presupuesto}')")
+    if epoca is not None:
+        condiciones.append(f"epoca_recomendada(X, '{epoca}')")
+
+    consulta = ", ".join(condiciones) + "."
+
+    try:
+        for r in prolog.query(consulta):
+            resultados.append(r['X'])
+    except Exception as e:
+        print("Error al ejecutar la consulta:", e)
+
+
     return resultados
 
 def obtener_info_destinos(destino):
     info = {}
     info['nombre'] = destino
 
-    for field in ['region', 'departamento', 'tipo_de_destino', 'clima', 'época_recomendada', 'presupuesto']:
+    for field in ['region', 'departamento', 'tipo_de_destino', 'clima', 'epoca_recomendada', 'presupuesto']:
         q = list(prolog.query(f"{field}({destino}, X)"))
         if q: info[field] = q[0]['X']
     
