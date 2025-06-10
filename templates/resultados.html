@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados de tu búsqueda</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Destinos recomendados</h1>
+    <a href="{{ url_for('index') }}">← Volver</a>
+  </header>
+
+  <main>
+    {% if resultados %}
+      {% for destino in resultados %}
+        <section class="destino">
+          <h2>{{ destino.nombre | replace("_", " ") | title }}</h2>
+          <p><strong>Región:</strong> {{ destino.region }}</p>
+          <p><strong>Departamento:</strong> {{ destino.departamento }}</p>
+          <p><strong>Tipo:</strong> {{ destino.tipo }}</p>
+          <p><strong>Clima:</strong> {{ destino.clima }}</p>
+          <p><strong>Época Recomendada:</strong> {{ destino.epoca }}</p>
+          <p><strong>Actividades:</strong> {{ destino.actividades | join(", ") }}</p>
+          <p><strong>Presupuesto:</strong> {{ destino.presupuesto }}</p>
+          <p><strong>Ideal para:</strong> {{ destino.tipo_turista | join(", ") }}</p>
+        </section>
+      {% endfor %}
+    {% else %}
+      <p>No se encontraron destinos con tus criterios. Prueba otra combinación.</p>
+    {% endif %}
+  </main>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Explora Perú</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Explora Perú</h1>
+    <p>Descubre los mejores destinos según tus preferencias</p>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="{{ url_for('static', filename='banner.jpg') }}" alt="Imagen de Perú">
+    </section>
+
+    <section class="formulario">
+      <form action="{{ url_for('resultado') }}" method="post">
+        <h2>¿Qué estás buscando?</h2>
+
+        <label>Región preferida:</label>
+        <select name="region">
+          <option value="">Cualquiera</option>
+          <option value="costa">Costa</option>
+          <option value="sierra">Sierra</option>
+          <option value="selva">Selva</option>
+        </select>
+
+        <label>Clima preferido:</label>
+        <select name="clima">
+          <option value="">Cualquiera</option>
+          <option value="templado">Templado</option>
+          <option value="frío">Frío</option>
+          <option value="cálido">Cálido</option>
+          <option value="tropical">Tropical</option>
+        </select>
+
+        <label>Presupuesto:</label>
+        <select name="presupuesto">
+          <option value="">Cualquiera</option>
+          <option value="bajo">Bajo</option>
+          <option value="medio">Medio</option>
+          <option value="alto">Alto</option>
+        </select>
+
+        <label>Tipo de turista:</label>
+        <select name="tipo_turista">
+          <option value="">Cualquiera</option>
+          <option value="mochilero">Mochilero</option>
+          <option value="cultural">Cultural</option>
+          <option value="familiar">Familiar</option>
+          <option value="aventurero">Aventurero</option>
+          <option value="naturalista">Naturalista</option>
+        </select>
+
+        <label>Actividades deseadas (elige 1 o más):</label>
+        <input type="checkbox" name="actividades" value="trekking">Trekking
+        <input type="checkbox" name="actividades" value="cultura">Cultura
+        <input type="checkbox" name="actividades" value="playa">Playa
+        <input type="checkbox" name="actividades" value="arqueologia">Arqueología
+        <input type="checkbox" name="actividades" value="gastronomia">Gastronomía
+
+        <button type="submit">Buscar destinos</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
