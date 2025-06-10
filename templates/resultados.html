@@ -16,6 +16,15 @@
       {% for destino in resultados %}
         <section class="destino">
           <h2>{{ destino.nombre | replace("_", " ") | title }}</h2>
+
+          <!-- Imagen del destino -->
+          {% if destino.link_imagen %}
+            <img src="{{ destino.link_imagen }}" alt="Imagen de {{ destino.nombre }}" class="imagen-destino">
+          {% else %}
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Flag_of_Peru_%28state%29.svg" alt="Imagen no disponible" class="imagen-destino">
+          {% endif %}
+
+
           <p><strong>Región:</strong> {{ destino.region }}</p>
           <p><strong>Departamento:</strong> {{ destino.departamento }}</p>
           <p><strong>Tipo:</strong> {{ destino.tipo_de_destino }}</p>

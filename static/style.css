@@ -110,3 +110,10 @@ form button:hover {
 .destino p {
   margin: 0.3rem 0;
 }
+
+.imagen-destino {
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
+  border-radius: 8px;
+}

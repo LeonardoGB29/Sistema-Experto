@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from sistema_experto import obtener_recomendaciones, obtener_info_destinos
+from sistema_experto import obtener_recomendaciones, obtener_info_destinos, obtener_imagen_destino
 
 app = Flask(__name__)
 

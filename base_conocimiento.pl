@@ -285,3 +285,36 @@ tipo_turista(vilcashuaman, [cultural, local]).
 tipo_turista(kuelap, [mochilero, cultural]).
 tipo_turista(gocta, [fotografo, naturalista]).
 tipo_turista(cajamarca, [cultural, familiar]).
+
+% Base de conocimiento: destino_imagen(NombreDestino, URLImagen)
+
+destino_imagen(machu_picchu, "https://upload.wikimedia.org/wikipedia/commons/e/eb/Machu_Picchu%2C_Peru.jpg").
+destino_imagen(lago_titicaca, "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Isla_Flotante_UROS%2C_Puno%2C_Peru_-_panoramio.jpg/1920px-Isla_Flotante_UROS%2C_Puno%2C_Peru_-_panoramio.jpg").
+destino_imagen(canon_del_colca, "").
+destino_imagen(arequipa_centro, "").
+destino_imagen(lima_centro, "").
+destino_imagen(paracas, "").
+destino_imagen(huacachina, "").
+destino_imagen(nazca, "").
+destino_imagen(cusco_centro, "").
+destino_imagen(valle_sagrado, "").
+destino_imagen(puno_centro, "").
+destino_imagen(trujillo_centro, "").
+destino_imagen(chan_chan, "").
+destino_imagen(huanchaco, "").
+destino_imagen(chiclayo, "").
+destino_imagen(tucume, "").
+destino_imagen(tarapoto, "").
+destino_imagen(iquitos, "").
+destino_imagen(pacaya_samiria, "").
+destino_imagen(punta_sal, "").
+destino_imagen(mancora, "").
+destino_imagen(huaraz, "").
+destino_imagen(pastoruri, "").
+destino_imagen(chavin, "").
+destino_imagen(cordillera_blanca, "").
+destino_imagen(ayacucho_centro, "").
+destino_imagen(vilcashuaman, "").
+destino_imagen(kuelap, "").
+destino_imagen(gocta, "").
+destino_imagen(cajamarca, "").
