@@ -48,6 +48,7 @@ def obtener_info_destinos(destino):
 
     acts = list(prolog.query(f"actividades({destino}, X)"))
     tipos = list(prolog.query(f"tipo_turista({destino}, X)"))
+    
 
     info['actividades'] = acts[0]['X'] if acts else []
     info['tipo_turista'] = tipos[0]['X'] if tipos else []
